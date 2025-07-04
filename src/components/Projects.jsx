@@ -9,7 +9,7 @@ import project3Image from '../assets/project3.png'
 const projects = [
   {
     id: 1,
-    title: "Project 1",
+    title: "Store",
     description: "وصف مختصر للمشروع التجريبي الأول يوضح الهدف والتقنيات المستخدمة",
     image: project1Image,
     technologies: ["HTML", "Css", "JS", "React JS"],
