@@ -97,7 +97,9 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-bold text-primary mb-4">مطور ويب متخصص</h3>
               <p className="text-white/70 text-lg leading-relaxed">
-                مطور ويب أعمل على تصميم وتطوير واجهات مستخدم حديثة باستخدام React وThree.js، مع اهتمام خاص بتحسين الأداء وصناعة تجارب تفاعلية مميزة وذات طابع بصري جذاب.
+                Web developer focused on modern UI development using React and Three.js, with a passion for performance, interactivity, and elegant design.
+
+
               </p>
             </CardContent>
           </Card>
