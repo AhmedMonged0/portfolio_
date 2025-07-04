@@ -18,12 +18,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "مشروع تجريبي 2", 
+    title: "Dashboard", 
     description: "وصف مختصر للمشروع التجريبي الثاني يوضح الهدف والتقنيات المستخدمة",
     image: project2Image,
     technologies: ["Vue.js", "Express", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#"
+    liveUrl: "https://dashboard-chi-nine-28.vercel.app/",
+    githubUrl: "https://github.com/AhmedMonged0/Dashboard"
   },
   {
     id: 3,
