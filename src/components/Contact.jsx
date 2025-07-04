@@ -4,51 +4,48 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react'
-import { FaFacebook, FaWhatsapp } from 'react-icons/fa'
-
 
 const contactInfo = [
   {
     icon: Mail,
     title: "البريد الإلكتروني",
-    value: "ahmdmnjd806@gmail.com",
-    href: "mailto:ahmdmnjd806@gmail.com"
+    value: "example@email.com",
+    href: "mailto:example@email.com"
   },
   {
     icon: Phone,
     title: "رقم الهاتف",
-    value: "+20 1003061972",
-    href: "tel:+201003061972"
+    value: "+20 123 456 7890",
+    href: "tel:+201234567890"
   },
   {
     icon: MapPin,
     title: "الموقع",
-    value: "بني سويف، مصر",
+    value: "القاهرة، مصر",
     href: "#"
   }
 ]
 
 const socialLinks = [
   {
-    icon: Linkedin, 
+    icon: Github,
+    name: "GitHub",
+    href: "https://github.com",
+    color: "hover:text-gray-400"
+  },
+  {
+    icon: Linkedin,
     name: "LinkedIn", 
-    href: "https://linkedin.com/in/ahmedmenged1234",
+    href: "https://linkedin.com",
     color: "hover:text-blue-400"
   },
   {
-    icon: FaFacebook,
-    name: "Facebook", 
-    href: "https://facebook.com/ahmedmenged1234",
-    color: "hover:text-blue-600"
-  },
-  {
-    icon: FaWhatsapp,
-    name: "WhatsApp",
-    href: "https://wa.me/201234567890", // ← غيّر الرقم لرقمك
-    color: "hover:text-green-500"
+    icon: Twitter,
+    name: "Twitter",
+    href: "https://twitter.com",
+    color: "hover:text-blue-300"
   }
-];
-
+]
 
 function ContactCard({ info, index }) {
   const IconComponent = info.icon
