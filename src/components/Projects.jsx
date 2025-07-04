@@ -21,7 +21,7 @@ const projects = [
     title: "Dashboard", 
     description: "وصف مختصر للمشروع التجريبي الثاني يوضح الهدف والتقنيات المستخدمة",
     image: project2Image,
-    technologies: ["Vue.js", "Express", "PostgreSQL"],
+    technologies: ["HTML", "Css", "Three.js", "React.js"],
     liveUrl: "https://dashboard-chi-nine-28.vercel.app/",
     githubUrl: "https://github.com/AhmedMonged0/Dashboard"
   },
