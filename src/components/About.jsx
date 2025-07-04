@@ -43,10 +43,10 @@ function TimelineItem({ item, index }) {
         <Card className="glass-effect glow-effect">
           <CardContent className="p-6">
             <div className="flex items-center gap-4 mb-3">
-              <span className="text-3xl">{item.icon}</span>
+              <span className="text-3xl"></span>
               <div>
                 <h3 className="text-xl font-bold text-primary">{item.title}</h3>
-                <span className="text-primary/70 font-semibold"></span>
+                <span className="text-primary/70 font-semibold">{item.year}</span>
               </div>
             </div>
             <p className="text-white/70">{item.description}</p>
