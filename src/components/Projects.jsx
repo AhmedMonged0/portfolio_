@@ -9,12 +9,12 @@ import project3Image from '../assets/project3.png'
 const projects = [
   {
     id: 1,
-    title: "مشروع تجريبي 1",
+    title: "Project 1",
     description: "وصف مختصر للمشروع التجريبي الأول يوضح الهدف والتقنيات المستخدمة",
     image: project1Image,
-    technologies: ["React", "Node.js", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#"
+    technologies: ["HTML", "Css", "JS", "React JS"],
+    liveUrl: "https://project-1-blush-beta.vercel.app/",
+    githubUrl: "https://github.com/AhmedMonged0/project_1"
   },
   {
     id: 2,
