@@ -44,7 +44,7 @@ const socialLinks = [
   {
     icon: FaWhatsapp,
     name: "whatsapp",
-    href: "https://wa.me/2011148220836",
+    href: "https://wa.me/201148220836",
     color: "hover:text-blue-300"
   }
 ]
