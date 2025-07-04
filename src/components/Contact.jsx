@@ -38,7 +38,7 @@ const socialLinks = [
   {
     icon: Linkedin,
     name: "LinkedIn", 
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/ahmed-monged-18a30b370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     color: "hover:text-blue-400"
   },
   {
