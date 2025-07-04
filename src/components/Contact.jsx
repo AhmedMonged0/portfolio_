@@ -9,14 +9,14 @@ const contactInfo = [
   {
     icon: Mail,
     title: "البريد الإلكتروني",
-    value: "example@email.com",
-    href: "mailto:example@email.com"
+    value: "ahmdmnjd806@gmail.com",
+    href: "mailto:ahmdmnjd806@gmail.com"
   },
   {
     icon: Phone,
     title: "رقم الهاتف",
-    value: "+20 123 456 7890",
-    href: "tel:+201234567890"
+    value: "+20 1003061972",
+    href: "tel:+201003061972"
   },
   {
     icon: MapPin,
