@@ -4,6 +4,8 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, FacebookIcon,   } from 'lucide-react'
+import { FaFacebook, FaWhatsapp } from 'react-icons/fa';
+
 
 const contactInfo = [
   {
@@ -40,8 +42,8 @@ const socialLinks = [
     color: "hover:text-blue-400"
   },
   {
-    icon: Twitter,
-    name: "Twitter",
+    icon: FaWhatsapp,
+    name: "whatsapp",
     href: "https://twitter.com",
     color: "hover:text-blue-300"
   }
