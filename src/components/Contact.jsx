@@ -3,7 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, FacebookIcon,  } from 'lucide-react'
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter,  } from 'lucide-react'
+import { FaFacebook, FaWhatsapp } from 'react-icons/fa';
+
 
 const contactInfo = [
   {
@@ -28,9 +30,9 @@ const contactInfo = [
 
 const socialLinks = [
   {
-    icon: FacebookIcon,
+    icon: FaFacebook,
     name: "Facebbok",
-    href: "https://github.com",
+    href: "https://www.facebook.com/ahmed.monged.0",
     color: "hover:text-gray-400"
   },
   {
@@ -40,9 +42,9 @@ const socialLinks = [
     color: "hover:text-blue-400"
   },
   {
-    icon: Twitter,
-    name: "Twitter",
-    href: "https://twitter.com",
+    icon: FaWhatsapp,
+    name: "whatsapp",
+    href: "https://wa.me/201003061972",
     color: "hover:text-blue-300"
   }
 ]
