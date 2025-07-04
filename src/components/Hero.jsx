@@ -22,7 +22,7 @@ export default function Hero() {
             PORTFOLIO
           </h1>
           <p className="text-xl md:text-2xl text-white/80 mb-8">
-            مرحباً بك في بورتفوليو ثلاثي الأبعاد
+            Ahmed Monged
           </p>
         </motion.div>
 
