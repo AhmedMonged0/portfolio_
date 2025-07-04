@@ -19,10 +19,10 @@ export default function Hero() {
           className="mb-8"
         >
           <h1 className="text-6xl md:text-8xl font-bold text-gradient mb-4 floating-element">
-            PORTFOLIO
+            Ahmed Monged
           </h1>
           <p className="text-xl md:text-2xl text-white/80 mb-8">
-            Ahmed Monged
+            About Me
           </p>
         </motion.div>
 
