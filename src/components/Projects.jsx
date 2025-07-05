@@ -31,7 +31,7 @@ const projects = [
     description: "وصف مختصر للمشروع التجريبي الثالث يوضح الهدف والتقنيات المستخدمة",
     image: project3Image, 
     technologies: ["HTML", "Css", "Three.js", "React.js"],
-    liveUrl: "https://mystore-ahmed-mongeds-projects.vercel.app/",
+    liveUrl: "https://future-store-ebon.vercel.app/",
     githubUrl: "#"
   }
 ]
