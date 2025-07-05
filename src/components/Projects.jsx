@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "Store",
-    description: "وصف مختصر للمشروع التجريبي الأول يوضح الهدف والتقنيات المستخدمة",
+    description: "موقع تجارة إلكترونية بسيط يتيح تصفح المنتجات وإضافتها إلى السلة، مع واجهة استخدام سلسة وتصميم جذاب يناسب تجربة المستخدم.",
     image: project1Image,
     technologies: ["HTML", "Css", "JS", "React JS"],
     liveUrl: "https://project-1-blush-beta.vercel.app/",
@@ -19,7 +19,7 @@ const projects = [
   {
     id: 2,
     title: "Dashboard", 
-    description: "وصف مختصر للمشروع التجريبي الثاني يوضح الهدف والتقنيات المستخدمة",
+    description: "لوحة تحكم تفاعلية لعرض البيانات والتحليلات بطريقة بصرية واضحة باستخدام الرسوم البيانية، تُستخدم لمراقبة الأداء واتخاذ القرارات.",
     image: project2Image,
     technologies: ["HTML", "Css", "Three.js", "React.js"],
     liveUrl: "https://dashboard-chi-nine-28.vercel.app/",
@@ -28,7 +28,7 @@ const projects = [
   {
     id: 3,
     title: "Future Store",
-    description: "وصف مختصر للمشروع التجريبي الثالث يوضح الهدف والتقنيات المستخدمة",
+    description: "منصة تسوق مستقبلية تعتمد على واجهات حديثة وتفاعلية، توفّر تجربة شراء سهلة ومريحة مع مزايا تحليلية وإحصائيات أداء متقدمة.",
     image: project3Image, 
     technologies: ["HTML", "Css", "Three.js", "React.js"],
     liveUrl: "https://future-store-ebon.vercel.app/",
