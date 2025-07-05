@@ -18,7 +18,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="mb-8"
         >
-          <h1 className="text-6xl md:text-8xl font-bold text-gradient mb-4 floating-element">
+          <h1 className="text-4xl md:text-6xl font-bold text-gradient mb-3 floating-element">
             Ahmed Monged
           </h1>
           <p className="text-xl md:text-2xl text-white/80 mb-8">
