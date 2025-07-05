@@ -15,7 +15,7 @@ function AnimatedSphere() {
 
   return (
     <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={meshRef} args={[1, 100, 200]} scale={2}>
+      <Sphere ref={meshRef} args={[1, 100, 200]} scale={1.5}>
         <MeshDistortMaterial
           color="#ffd700"
           attach="material"
@@ -60,7 +60,7 @@ function Particles() {
 
 export default function Scene3D() {
   return (
-    <div className="absolute inset-0 w-full h-full">
+    <div className="absolute inset-0 w-full h-full pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
         style={{ background: 'transparent' }}
@@ -74,6 +74,7 @@ export default function Scene3D() {
           enablePan={false}
           autoRotate
           autoRotateSpeed={0.5}
+          enabled={false}
         />
       </Canvas>
     </div>
