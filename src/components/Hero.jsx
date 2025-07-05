@@ -32,12 +32,13 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Button 
-            className="glow-effect glass-effect px-8 py-4 text-lg font-semibold"
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            <Button 
+            className="btn-primary enhanced-glow btn-pulse px-8 py-4 text-lg font-semibold"
+            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
           >
             عرض المشاريع
           </Button>
+
           <Button 
             variant="outline" 
             className="glass-effect px-8 py-4 text-lg font-semibold border-primary text-primary hover:bg-primary hover:text-primary-foreground"
