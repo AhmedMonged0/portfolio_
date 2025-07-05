@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-import ProfileImage from './components/ProfileImage.jsx'
+
 
 
 @custom-variant dark (&:is(.dark *));
