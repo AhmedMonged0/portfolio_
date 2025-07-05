@@ -14,7 +14,7 @@ const projects = [
     image: project1Image,
     technologies: ["HTML", "Css", "JS", "React JS"],
     liveUrl: "https://project-1-blush-beta.vercel.app/",
-    githubUrl: "https://github.com/AhmedMonged0/project_1"
+    githubUrl: "#"
   },
   {
     id: 2,
@@ -23,15 +23,15 @@ const projects = [
     image: project2Image,
     technologies: ["HTML", "Css", "Three.js", "React.js"],
     liveUrl: "https://dashboard-chi-nine-28.vercel.app/",
-    githubUrl: "https://github.com/AhmedMonged0/Dashboard"
+    githubUrl: "#"
   },
   {
     id: 3,
-    title: "مشروع تجريبي 3",
+    title: "Future Store",
     description: "وصف مختصر للمشروع التجريبي الثالث يوضح الهدف والتقنيات المستخدمة",
     image: project3Image, 
-    technologies: ["Angular", "Python", "Django"],
-    liveUrl: "#",
+    technologies: ["HTML", "Css", "Three.js", "React.js"],
+    liveUrl: "https://mystore-ahmed-mongeds-projects.vercel.app/",
     githubUrl: "#"
   }
 ]
