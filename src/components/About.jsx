@@ -124,13 +124,41 @@ export default function About() {
             {['React', 'JavaScript', 'Three.js', 'Node.js', 'CSS3', 'HTML5', 'Git', 'MongoDB'].map((skill, index) => (
               <motion.div
                 key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.1 }}
-                className="glass-effect glow-effect p-4 text-center rounded-lg"
+                initial={{ opacity: 0, scale: 0.8, rotateY: -180 }}
+                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{ 
+                  scale: 1.15,
+                  rotateY: 10,
+                  rotateX: 5,
+                  transition: { duration: 0.2, type: "spring", stiffness: 300 }
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="skill-button glass-effect glow-effect p-4 text-center rounded-lg cursor-pointer relative overflow-hidden"
               >
-                <span className="text-primary font-semibold">{skill}</span>
+                <motion.div
+                  className="skill-bg-animation"
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileHover={{ 
+                    scale: 1.5, 
+                    opacity: 1,
+                    transition: { duration: 0.3 }
+                  }}
+                />
+                <motion.span 
+                  className="text-primary font-semibold relative z-10"
+                  whileHover={{ 
+                    textShadow: "0 0 10px rgba(255, 215, 0, 0.8)",
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  {skill}
+                </motion.span>
               </motion.div>
             ))}
           </div>
