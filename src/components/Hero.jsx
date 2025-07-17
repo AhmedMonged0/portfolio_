@@ -27,7 +27,7 @@ export default function Hero() {
             </h1>
             <div className="text-lg md:text-xl text-white/90 leading-relaxed space-y-4">
               <p>
-                مرحباً، أنا أحمد منجد - مطور ويب متخصص في تطوير التطبيقات الحديثة
+                مرحباً، أنا مطور ويب متخصص في تطوير التطبيقات الحديثة
               </p>
               <p>
                 أعمل بتقنيات React, Node.js, وأحب إنشاء تجارب مستخدم مميزة ومبتكرة
