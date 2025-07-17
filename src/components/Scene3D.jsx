@@ -67,7 +67,7 @@ export default function Scene3D() {
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
-        <AnimatedSphere />
+
         <Particles />
         <OrbitControls 
           enableZoom={false} 
