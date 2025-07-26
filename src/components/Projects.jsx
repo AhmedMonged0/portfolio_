@@ -5,6 +5,7 @@ import { ExternalLink, Github } from 'lucide-react'
 import project1Image from '../assets/project1.png'
 import project2Image from '../assets/project2.png'
 import project3Image from '../assets/project3.png'
+import project4Image from '../assets/project4.png'
 
 const projects = [
   {
@@ -37,7 +38,7 @@ const projects = [
   {
     id: 4,
     title: "Building_Company",
-    description: "",
+    description: "موقع شركة إنشاءات يعرض خدمات الشركة ومشاريعها السابقة بتصميم احترافي وواجهة مستخدم سهلة التنقل.",
     image: project4Image, 
     technologies: ["HTML", "Css", "JavaScript"],
     liveUrl: "https://building-company-blond.vercel.app/",
