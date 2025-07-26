@@ -33,7 +33,19 @@ const projects = [
     technologies: ["HTML", "Css", "Three.js", "React.js"],
     liveUrl: "https://future-store-ebon.vercel.app/",
     githubUrl: "#"
-  }
+  },
+  {
+    id: 4,
+    title: "Building_Company",
+    description: "",
+    image: project4Image, 
+    technologies: ["HTML", "Css", "JavaScript"],
+    liveUrl: "https://building-company-blond.vercel.app/",
+    githubUrl: "#"
+  },
+
+
+
 ]
 
 function ProjectCard({ project, index }) {
