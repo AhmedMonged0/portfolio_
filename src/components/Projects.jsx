@@ -48,7 +48,7 @@ const projects = [
   {
     id: 5,
     title: "airline",
-    description: "طيران",
+    description: "موقع إلكتروني تفاعلي لشركة طيران يتيح للمستخدمين استكشاف الوجهات، معرفة الخدمات، وحجز الرحلات بسهولة. التصميم عصري ومتجاوب ليعمل بسلاسة على جميع الأجهزة.",
     image: project5Image, 
     technologies: ["HTML", "Css", "JavaScript", "React"],
     liveUrl: "https://airline-delta-seven.vercel.app/",
