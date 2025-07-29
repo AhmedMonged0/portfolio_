@@ -120,9 +120,19 @@ export default function About() {
           <h3 className="text-3xl font-bold text-center text-primary mb-8">المهارات التقنية</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {['React', 'JavaScript', 'Three.js', 'Node.js', 'CSS3', 'HTML5', 'Git', 'MongoDB'].map((skill, index) => {
-              const getSkillVariant = (index) => {
-                const variants = ['skill-button', 'skill-button-blue', 'skill-button-purple', 'skill-button-cyan'];
-                return variants[index % variants.length];
+              const getSkillVariant = (skill, index) => {
+                // تحديد ألوان خاصة لمهارات معينة
+                const skillColors = {
+                  'React': 'skill-button-blue',
+                  'CSS3': 'skill-button-purple',
+                  'JavaScript': 'skill-button-cyan',
+                  'Three.js': 'skill-button',
+                  'Node.js': 'skill-button-blue',
+                  'HTML5': 'skill-button-purple',
+                  'Git': 'skill-button-cyan',
+                  'MongoDB': 'skill-button'
+                };
+                return skillColors[skill] || 'skill-button';
               };
 
               return (
@@ -143,7 +153,7 @@ export default function About() {
                     transition: { duration: 0.2, type: "spring", stiffness: 300 }
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className={`${getSkillVariant(index)} glass-effect glow-effect p-4 text-center rounded-lg cursor-pointer relative overflow-hidden`}
+                  className={`${getSkillVariant(skill, index)} glass-effect glow-effect p-4 text-center rounded-lg cursor-pointer relative overflow-hidden`}
                 >
                   <motion.div
                     className="skill-bg-animation"
