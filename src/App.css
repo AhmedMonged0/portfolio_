@@ -59,10 +59,31 @@
   --muted-foreground: #a0a0a0;
   --accent: #ffd700;
   --accent-foreground: #1a1a2e;
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: #ff4757;
   --border: #333;
   --input: #333;
   --ring: #ffd700;
+  
+  /* Enhanced Color Palette */
+  --primary-light: #ffed4e;
+  --primary-dark: #e6c200;
+  --secondary-blue: #4a90e2;
+  --secondary-blue-light: #6bb6ff;
+  --secondary-blue-dark: #2c5aa0;
+  --accent-purple: #9c88ff;
+  --accent-cyan: #00d4ff;
+  --success: #2ed573;
+  --warning: #ffa502;
+  --error: #ff4757;
+  --info: #3742fa;
+  
+  /* Gradient Variables */
+  --gradient-primary: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  --gradient-secondary: linear-gradient(135deg, #4a90e2 0%, #6bb6ff 100%);
+  --gradient-purple: linear-gradient(135deg, #9c88ff 0%, #667eea 100%);
+  --gradient-cyan: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  --gradient-background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -165,6 +186,27 @@
 
 .text-gradient {
   background: linear-gradient(45deg, #ffd700, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: var(--gradient-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyan {
+  background: var(--gradient-cyan);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -432,6 +474,58 @@
   }
 }
 
+/* Enhanced Button Variants */
+.btn-secondary {
+  background: var(--gradient-secondary);
+  color: white;
+  border: none;
+  box-shadow: 
+    0 0 20px rgba(74, 144, 226, 0.4),
+    0 4px 15px rgba(74, 144, 226, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(74, 144, 226, 0.6),
+    0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.btn-purple {
+  background: var(--gradient-purple);
+  color: white;
+  border: none;
+  box-shadow: 
+    0 0 20px rgba(156, 136, 255, 0.4),
+    0 4px 15px rgba(156, 136, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-purple:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(156, 136, 255, 0.6),
+    0 8px 25px rgba(156, 136, 255, 0.3);
+}
+
+.btn-cyan {
+  background: var(--gradient-cyan);
+  color: white;
+  border: none;
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.4),
+    0 4px 15px rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-cyan:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.6),
+    0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
 /* Staggered Pulse Delays for Skills */
 .skill-button:nth-child(1) { animation-delay: 0s; }
 .skill-button:nth-child(2) { animation-delay: 0.2s; }
@@ -485,5 +579,160 @@
       0 10px 30px rgba(255, 215, 0, 0.2),
       inset 0 0 20px rgba(255, 215, 0, 0.1);
   }
+}
+
+/* Enhanced Skill Button Variants */
+.skill-button-blue {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0.05) 100%);
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  color: var(--secondary-blue-light);
+}
+
+.skill-button-blue:hover {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.2) 0%, rgba(74, 144, 226, 0.1) 100%);
+  border-color: rgba(74, 144, 226, 0.5);
+  box-shadow: 
+    0 0 25px rgba(74, 144, 226, 0.4),
+    0 10px 30px rgba(74, 144, 226, 0.2),
+    inset 0 0 20px rgba(74, 144, 226, 0.1);
+}
+
+.skill-button-purple {
+  background: linear-gradient(135deg, rgba(156, 136, 255, 0.1) 0%, rgba(156, 136, 255, 0.05) 100%);
+  border: 1px solid rgba(156, 136, 255, 0.2);
+  color: var(--accent-purple);
+}
+
+.skill-button-purple:hover {
+  background: linear-gradient(135deg, rgba(156, 136, 255, 0.2) 0%, rgba(156, 136, 255, 0.1) 100%);
+  border-color: rgba(156, 136, 255, 0.5);
+  box-shadow: 
+    0 0 25px rgba(156, 136, 255, 0.4),
+    0 10px 30px rgba(156, 136, 255, 0.2),
+    inset 0 0 20px rgba(156, 136, 255, 0.1);
+}
+
+.skill-button-cyan {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: var(--accent-cyan);
+}
+
+.skill-button-cyan:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 
+    0 0 25px rgba(0, 212, 255, 0.4),
+    0 10px 30px rgba(0, 212, 255, 0.2),
+    inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* Enhanced Card Variants */
+.card-blue {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(22, 33, 62, 0.8) 100%);
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card-blue:hover {
+  border-color: rgba(74, 144, 226, 0.5);
+  box-shadow: 
+    0 0 30px rgba(74, 144, 226, 0.3),
+    0 10px 40px rgba(74, 144, 226, 0.2);
+}
+
+.card-purple {
+  background: linear-gradient(135deg, rgba(156, 136, 255, 0.1) 0%, rgba(22, 33, 62, 0.8) 100%);
+  border: 1px solid rgba(156, 136, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card-purple:hover {
+  border-color: rgba(156, 136, 255, 0.5);
+  box-shadow: 
+    0 0 30px rgba(156, 136, 255, 0.3),
+    0 10px 40px rgba(156, 136, 255, 0.2);
+}
+
+.card-cyan {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(22, 33, 62, 0.8) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card-cyan:hover {
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.3),
+    0 10px 40px rgba(0, 212, 255, 0.2);
+}
+
+/* Animated Background Particles */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: float-particle 8s infinite linear;
+  opacity: 0.6;
+}
+
+.particle:nth-child(2n) {
+  background: var(--secondary-blue);
+  animation-duration: 12s;
+}
+
+.particle:nth-child(3n) {
+  background: var(--accent-purple);
+  animation-duration: 10s;
+}
+
+.particle:nth-child(4n) {
+  background: var(--accent-cyan);
+  animation-duration: 14s;
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Glow Effects */
+.multi-glow {
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.3),
+    0 0 40px rgba(74, 144, 226, 0.2),
+    0 0 60px rgba(156, 136, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.multi-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.5),
+    0 0 60px rgba(74, 144, 226, 0.3),
+    0 0 90px rgba(156, 136, 255, 0.2);
 }
 
