@@ -52,6 +52,25 @@ const socialLinks = [
 function ContactCard({ info, index }) {
   const IconComponent = info.icon
   
+  // تحديد اللون بناءً على الفهرس
+  const getCardColorClass = (index) => {
+    const colors = [
+      'moving-border-card-cyan',
+      'moving-border-card-green', 
+      'moving-border-card-orange'
+    ];
+    return colors[index % colors.length];
+  };
+
+  const getGlowColor = (index) => {
+    const glowColors = [
+      'rgba(0, 212, 255, 0.3)',
+      'rgba(46, 213, 115, 0.3)',
+      'rgba(255, 165, 2, 0.3)'
+    ];
+    return glowColors[index % glowColors.length];
+  };
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -59,7 +78,19 @@ function ContactCard({ info, index }) {
       transition={{ duration: 0.6, delay: index * 0.2 }}
       whileHover={{ scale: 1.05 }}
     >
-      <Card className="glass-effect glow-effect h-full">
+      <Card 
+        className={`glass-effect h-full transform-gpu transition-all duration-300 hover:shadow-2xl ${getCardColorClass(index)}`}
+        style={{
+          boxShadow: `0 0 20px ${getGlowColor(index)}, 0 8px 32px rgba(0, 0, 0, 0.3)`,
+          transition: 'all 0.3s ease, box-shadow 0.3s ease'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = `0 0 40px ${getGlowColor(index)}, 0 12px 40px rgba(0, 0, 0, 0.4)`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = `0 0 20px ${getGlowColor(index)}, 0 8px 32px rgba(0, 0, 0, 0.3)`;
+        }}
+      >
         <CardContent className="p-6 text-center">
           <IconComponent className="w-12 h-12 text-primary mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-primary mb-2">{info.title}</h3>
@@ -78,18 +109,52 @@ function ContactCard({ info, index }) {
 function SocialLink({ social, index }) {
   const IconComponent = social.icon
   
+  // تحديد اللون بناءً على الفهرس
+  const getSocialColorClass = (index) => {
+    const colors = [
+      'moving-border-card-red',
+      'moving-border-card-blue', 
+      'moving-border-card-teal'
+    ];
+    return colors[index % colors.length];
+  };
+
+  const getSocialGlowColor = (index) => {
+    const glowColors = [
+      'rgba(239, 68, 68, 0.4)',
+      'rgba(74, 144, 226, 0.4)',
+      'rgba(20, 184, 166, 0.4)'
+    ];
+    return glowColors[index % glowColors.length];
+  };
+  
   return (
     <motion.a
       href={social.href}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ scale: 1.2 }}
-      className={`glass-effect glow-effect p-4 rounded-full text-white transition-colors ${social.color}`}
+      initial={{ opacity: 0, scale: 0.8, rotateY: -180 }}
+      whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1, type: "spring", stiffness: 100 }}
+      whileHover={{ 
+        scale: 1.3, 
+        rotate: 10,
+        transition: { duration: 0.2, type: "spring", stiffness: 300 }
+      }}
+      whileTap={{ scale: 0.9 }}
+      className={`glass-effect p-4 rounded-full text-white transition-colors relative overflow-hidden ${social.color} ${getSocialColorClass(index)}`}
+      style={{
+        boxShadow: `0 0 20px ${getSocialGlowColor(index)}, 0 6px 25px rgba(0, 0, 0, 0.3)`,
+        transition: 'all 0.3s ease, box-shadow 0.3s ease'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = `0 0 35px ${getSocialGlowColor(index)}, 0 10px 35px rgba(0, 0, 0, 0.4)`;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = `0 0 20px ${getSocialGlowColor(index)}, 0 6px 25px rgba(0, 0, 0, 0.3)`;
+      }}
     >
-      <IconComponent className="w-6 h-6" />
+      <IconComponent className="w-6 h-6 relative z-10" />
     </motion.a>
   )
 }
@@ -117,7 +182,19 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Card className="glass-effect glow-effect">
+            <Card 
+              className="glass-effect moving-border-card-purple transform-gpu transition-all duration-300 hover:shadow-2xl"
+              style={{
+                boxShadow: `0 0 20px rgba(156, 136, 255, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3)`,
+                transition: 'all 0.3s ease, box-shadow 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 40px rgba(156, 136, 255, 0.3), 0 12px 40px rgba(0, 0, 0, 0.4)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = `0 0 20px rgba(156, 136, 255, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3)`;
+              }}
+            >
               <CardHeader>
                 <CardTitle className="text-2xl text-primary">أرسل رسالة</CardTitle>
               </CardHeader>
@@ -203,7 +280,19 @@ export default function Contact() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Card className="glass-effect glow-effect text-center">
+              <Card 
+                className="glass-effect moving-border-card-pink text-center h-full transform-gpu transition-all duration-300 hover:shadow-2xl"
+                style={{
+                  boxShadow: `0 0 20px rgba(236, 72, 153, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3)`,
+                  transition: 'all 0.3s ease, box-shadow 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = `0 0 40px rgba(236, 72, 153, 0.3), 0 12px 40px rgba(0, 0, 0, 0.4)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = `0 0 20px rgba(236, 72, 153, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3)`;
+                }}
+              >
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-primary mb-4">
                     مستعد لبدء مشروعك؟
@@ -211,7 +300,7 @@ export default function Contact() {
                   <p className="text-white/70 mb-6">
                     دعنا نعمل معاً لتحويل أفكارك إلى واقع رقمي مذهل
                   </p>
-                  <Button className="glow-effect px-8 py-3">
+                  <Button className="btn-primary enhanced-glow btn-pulse px-8 py-3">
                     ابدأ مشروعك الآن
                   </Button>
                 </CardContent>

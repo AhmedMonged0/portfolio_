@@ -60,6 +60,29 @@ const projects = [
 ]
 
 function ProjectCard({ project, index }) {
+  // تحديد اللون بناءً على الفهرس
+  const getCardColorClass = (index) => {
+    const colors = [
+      'moving-border-card-blue',
+      'moving-border-card-purple', 
+      'moving-border-card-cyan',
+      'moving-border-card-green',
+      'moving-border-card-orange'
+    ];
+    return colors[index % colors.length];
+  };
+
+  const getGlowColor = (index) => {
+    const glowColors = [
+      'rgba(74, 144, 226, 0.3)',
+      'rgba(156, 136, 255, 0.3)',
+      'rgba(0, 212, 255, 0.3)',
+      'rgba(46, 213, 115, 0.3)',
+      'rgba(255, 165, 2, 0.3)'
+    ];
+    return glowColors[index % glowColors.length];
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50, rotateY: -15 }}
@@ -72,7 +95,19 @@ function ProjectCard({ project, index }) {
       }}
       className="perspective-1000"
     >
-      <Card className="glass-effect glow-effect h-full transform-gpu transition-all duration-300 hover:shadow-2xl">
+      <Card 
+        className={`glass-effect h-full transform-gpu transition-all duration-300 hover:shadow-2xl ${getCardColorClass(index)}`}
+        style={{
+          boxShadow: `0 0 20px ${getGlowColor(index)}, 0 8px 32px rgba(0, 0, 0, 0.3)`,
+          transition: 'all 0.3s ease, box-shadow 0.3s ease'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = `0 0 40px ${getGlowColor(index)}, 0 12px 40px rgba(0, 0, 0, 0.4)`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = `0 0 20px ${getGlowColor(index)}, 0 8px 32px rgba(0, 0, 0, 0.3)`;
+        }}
+      >
         <CardHeader>
           <div className="w-full h-48 rounded-lg mb-4 overflow-hidden">
             <img 
@@ -142,7 +177,7 @@ export default function Projects() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center mt-12"
         >
-          <Button className="glow-effect px-8 py-4 text-lg">
+          <Button className="btn-primary enhanced-glow btn-pulse px-8 py-4 text-lg font-semibold">
             عرض المزيد من المشاريع
           </Button>
         </motion.div>

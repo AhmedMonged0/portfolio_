@@ -32,6 +32,27 @@ const timeline = [
 ]
 
 function TimelineItem({ item, index }) {
+  // تحديد اللون بناءً على الفهرس
+  const getCardColorClass = (index) => {
+    const colors = [
+      'moving-border-card-pink',
+      'moving-border-card-red', 
+      'moving-border-card-teal',
+      'moving-border-card-purple'
+    ];
+    return colors[index % colors.length];
+  };
+
+  const getGlowColor = (index) => {
+    const glowColors = [
+      'rgba(236, 72, 153, 0.3)',
+      'rgba(239, 68, 68, 0.3)',
+      'rgba(20, 184, 166, 0.3)',
+      'rgba(156, 136, 255, 0.3)'
+    ];
+    return glowColors[index % glowColors.length];
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -40,7 +61,19 @@ function TimelineItem({ item, index }) {
       className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
     >
       <div className="flex-1">
-        <Card className="glass-effect glow-effect">
+        <Card 
+          className={`glass-effect h-full transform-gpu transition-all duration-300 hover:shadow-2xl ${getCardColorClass(index)}`}
+          style={{
+            boxShadow: `0 0 20px ${getGlowColor(index)}, 0 8px 32px rgba(0, 0, 0, 0.3)`,
+            transition: 'all 0.3s ease, box-shadow 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow = `0 0 40px ${getGlowColor(index)}, 0 12px 40px rgba(0, 0, 0, 0.4)`;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow = `0 0 20px ${getGlowColor(index)}, 0 8px 32px rgba(0, 0, 0, 0.3)`;
+          }}
+        >
           <CardContent className="p-6">
             <div className="flex items-center gap-4 mb-3">
               <span className="text-3xl">{item.icon}</span>
@@ -90,11 +123,62 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <Card className="glass-effect glow-effect">
+          <Card 
+            className="glass-effect moving-border-card-blue h-full transform-gpu transition-all duration-300 hover:shadow-2xl"
+            style={{
+              boxShadow: `0 0 20px rgba(74, 144, 226, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3)`,
+              transition: 'all 0.3s ease, box-shadow 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = `0 0 40px rgba(74, 144, 226, 0.3), 0 12px 40px rgba(0, 0, 0, 0.4)`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = `0 0 20px rgba(74, 144, 226, 0.3), 0 8px 32px rgba(0, 0, 0, 0.3)`;
+            }}
+          >
             <CardContent className="p-8 text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-6 flex items-center justify-center text-4xl">
-                👨‍💻
-              </div>
+              <motion.div 
+                className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center text-4xl moving-border-card-cyan relative overflow-hidden"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(56, 189, 248, 0.3) 50%, rgba(14, 165, 233, 0.2) 100%)',
+                  border: '3px solid rgba(0, 212, 255, 0.5)',
+                  boxShadow: `
+                    0 0 30px rgba(0, 212, 255, 0.6), 
+                    0 0 60px rgba(0, 212, 255, 0.4),
+                    inset 0 0 20px rgba(0, 212, 255, 0.1),
+                    0 8px 32px rgba(0, 0, 0, 0.3)
+                  `,
+                  transition: 'all 0.3s ease, box-shadow 0.3s ease'
+                }}
+                initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+                whileHover={{ 
+                  scale: 1.15,
+                  rotate: 10,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = `
+                    0 0 50px rgba(0, 212, 255, 0.8), 
+                    0 0 80px rgba(0, 212, 255, 0.6),
+                    inset 0 0 30px rgba(0, 212, 255, 0.2),
+                    0 12px 40px rgba(0, 0, 0, 0.4)
+                  `;
+                  e.currentTarget.style.border = '3px solid rgba(0, 212, 255, 0.8)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = `
+                    0 0 30px rgba(0, 212, 255, 0.6), 
+                    0 0 60px rgba(0, 212, 255, 0.4),
+                    inset 0 0 20px rgba(0, 212, 255, 0.1),
+                    0 8px 32px rgba(0, 0, 0, 0.3)
+                  `;
+                  e.currentTarget.style.border = '3px solid rgba(0, 212, 255, 0.5)';
+                }}
+              >
+                <span className="relative z-10 drop-shadow-lg">👨‍💻</span>
+              </motion.div>
               <h3 className="text-2xl font-bold text-primary mb-4">مطور ويب متخصص</h3>
               <p className="text-white/70 text-lg leading-relaxed">
                 Web developer focused on modern UI development using React and Three.js, with a passion for performance, interactivity, and elegant design.

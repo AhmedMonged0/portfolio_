@@ -201,20 +201,50 @@ export default function Hero() {
               className="mb-8"
             >
               <motion.div 
-                className="profile-photo-container relative"
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
+                className="profile-photo-container relative moving-border-card-orange rounded-full overflow-hidden"
+                style={{
+                  boxShadow: `
+                    0 0 40px rgba(255, 165, 2, 0.6), 
+                    0 0 80px rgba(255, 165, 2, 0.4),
+                    inset 0 0 30px rgba(255, 165, 2, 0.1),
+                    0 15px 50px rgba(0, 0, 0, 0.4)
+                  `,
+                  transition: 'all 0.3s ease, box-shadow 0.3s ease'
                 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
+                whileHover={{ 
+                  scale: 1.08,
+                  rotate: 5,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
+                }}
+                initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 1.2, delay: 0.8, type: "spring", stiffness: 100 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = `
+                    0 0 60px rgba(255, 165, 2, 0.8), 
+                    0 0 100px rgba(255, 165, 2, 0.6),
+                    inset 0 0 40px rgba(255, 165, 2, 0.2),
+                    0 20px 60px rgba(0, 0, 0, 0.5)
+                  `;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = `
+                    0 0 40px rgba(255, 165, 2, 0.6), 
+                    0 0 80px rgba(255, 165, 2, 0.4),
+                    inset 0 0 30px rgba(255, 165, 2, 0.1),
+                    0 15px 50px rgba(0, 0, 0, 0.4)
+                  `;
+                }}
               >
                 {/* Photo */}
                 <img 
                   src={myPhoto} 
                   alt="Ahmed Monged" 
-                  className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-primary/40 shadow-2xl"
+                  className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover relative z-10"
+                  style={{
+                    border: '4px solid rgba(255, 165, 2, 0.6)',
+                    transition: 'all 0.3s ease'
+                  }}
                 />
               </motion.div>
             </motion.div>
@@ -235,7 +265,7 @@ export default function Hero() {
 
               <Button 
                 variant="outline" 
-                className="glass-effect px-8 py-4 text-lg font-semibold border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="glass-effect glow-effect px-8 py-4 text-lg font-semibold border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 تواصل معي
