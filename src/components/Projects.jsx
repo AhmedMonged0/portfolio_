@@ -44,6 +44,15 @@ const projects = [
     liveUrl: "https://building-company-blond.vercel.app/",
     githubUrl: "#"
   },
+  {
+    id: 5,
+    title: "Building_Company",
+    description: "موقع شركة إنشاءات يعرض خدمات الشركة ومشاريعها السابقة بتصميم احترافي وواجهة مستخدم سهلة التنقل.",
+    image: project4Image, 
+    technologies: ["HTML", "Css", "JavaScript"],
+    liveUrl: "https://building-company-blond.vercel.app/",
+    githubUrl: "#"
+  },
 
 
 
