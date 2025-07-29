@@ -282,6 +282,416 @@
 }
 
 
+/* Profile Info Card Styles */
+.profile-info-card {
+  background: rgba(26, 33, 46, 0.8);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.profile-info-card:hover {
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 215, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.profession-badge span {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profession-badge span:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2));
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.paragraph-hover {
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: relative;
+  cursor: default;
+}
+
+.paragraph-hover:hover {
+  background: rgba(255, 215, 0, 0.05);
+  color: #ffffff;
+  transform: translateX(10px);
+}
+
+.paragraph-hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: linear-gradient(to bottom, #ffd700, #ffed4e);
+  transition: height 0.3s ease;
+  border-radius: 2px;
+}
+
+.paragraph-hover:hover::before {
+  height: 80%;
+}
+
+.skill-tag {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.skill-tag:hover::before {
+  left: 100%;
+}
+
+/* Profile Photo Enhancements */
+.profile-photo-container {
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Smooth Glass Card for Profile Info */
+.smooth-glass-card {
+  background: linear-gradient(145deg, 
+    rgba(15, 23, 42, 0.85) 0%, 
+    rgba(30, 41, 59, 0.75) 30%,
+    rgba(45, 55, 72, 0.7) 70%,
+    rgba(15, 23, 42, 0.85) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.2);
+  border: 1.5px solid rgba(255, 215, 0, 0.15);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.3),
+    0 10px 25px -5px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(255, 215, 0, 0.08);
+  position: relative;
+  overflow: visible;
+  margin-bottom: 3rem;
+  z-index: 10;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.smooth-glass-card:hover {
+  background: linear-gradient(145deg, 
+    rgba(15, 23, 42, 0.95) 0%, 
+    rgba(30, 41, 59, 0.9) 30%,
+    rgba(45, 55, 72, 0.85) 70%,
+    rgba(15, 23, 42, 0.95) 100%
+  );
+}
+
+/* Subtle animated border */
+.smooth-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  background: linear-gradient(135deg, 
+    rgba(255, 215, 0, 0.3) 0%,
+    transparent 25%,
+    transparent 75%,
+    rgba(255, 215, 0, 0.2) 100%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  animation: border-glow 4s ease-in-out infinite;
+}
+
+@keyframes border-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* تأثير إضافي للإضاءة عند الـ hover */
+.smooth-glass-card::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  right: 15%;
+  bottom: 15%;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.04), transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.smooth-glass-card:hover::after {
+  opacity: 1;
+}
+
+/* تأثير الخط المتحرك - دايماً شغال */
+.moving-border-card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 25px rgba(255, 215, 0, 0.15),
+    inset 0 0 25px rgba(255, 215, 0, 0.03);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Border متحرك عند hover - أقل */
+.moving-border-card:hover {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, 
+                rgba(255, 215, 0, 0.4), 
+                rgba(255, 255, 255, 0.3), 
+                rgba(255, 215, 0, 0.4),
+                rgba(255, 165, 0, 0.3)) border-box;
+  border: 2px solid transparent;
+  animation: borderPulse 3s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  }
+}
+
+/* خط متحرك أفقي - دايماً شغال */
+.moving-border-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  right: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 215, 0, 0.8), 
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 215, 0, 0.8), 
+    transparent
+  );
+  z-index: 10;
+  opacity: 1;
+  animation: scanlineHorizontal 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes scanlineHorizontal {
+  0% { left: -100%; right: 100%; }
+  50% { left: 0%; right: 0%; }
+  100% { left: 100%; right: -100%; }
+}
+
+/* خط متحرك عمودي - دايماً شغال */
+.moving-border-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -100%;
+  bottom: 100%;
+  width: 3px;
+  background: linear-gradient(180deg, 
+    transparent, 
+    rgba(255, 215, 0, 0.8), 
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 215, 0, 0.8), 
+    transparent
+  );
+  z-index: 10;
+  opacity: 1;
+  animation: scanlineVertical 4.5s ease-in-out infinite 2s;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes scanlineVertical {
+  0% { top: -100%; bottom: 100%; }
+  50% { top: 0%; bottom: 0%; }
+  100% { top: 100%; bottom: -100%; }
+}
+
+.smooth-glass-card:hover {
+  background: linear-gradient(145deg, 
+    rgba(15, 23, 42, 0.95) 0%, 
+    rgba(30, 41, 59, 0.9) 30%,
+    rgba(45, 55, 72, 0.85) 70%,
+    rgba(15, 23, 42, 0.95) 100%
+  );
+}
+
+/* Bio Section Styling */
+.bio-section {
+  position: relative;
+  z-index: 2;
+}
+
+.bio-paragraph {
+  position: relative;
+  padding: 0.7rem 0.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.bio-paragraph:hover {
+  background: rgba(255, 215, 0, 0.05);
+  padding-left: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1);
+}
+
+.bio-icon {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 1.2em;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.bio-paragraph:hover .bio-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Enhanced Badge */
+.enhanced-badge {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 235, 59, 0.1) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: #ffd700;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 600;
+}
+
+.enhanced-badge:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 235, 59, 0.2) 100%);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  color: #ffed4a;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+/* Typing Animation */
+.typing-name {
+  position: relative;
+  white-space: nowrap;
+  overflow: visible;
+  line-height: 1.3;
+  padding: 0.5rem 0;
+  display: block;
+  height: auto;
+  min-height: fit-content;
+}
+
+/* تأكد من أن الاسم يبقى في سطر واحد */
+@media (max-width: 640px) {
+  .typing-name {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-name {
+    font-size: 1.3rem !important;
+    line-height: 1.3;
+  }
+}
+
+.typing-cursor {
+  color: var(--accent);
+  animation: blink 1s infinite;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Enhanced animations for mobile */
+@media (max-width: 768px) {
+  .profile-info-card {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-tags {
+    justify-content: center !important;
+  }
+  
+  .paragraph-hover:hover {
+    transform: translateX(5px);
+  }
+  
+  .profile-photo-container {
+    transform: none;
+  }
+  
+  .smooth-glass-card {
+    padding: 1.8rem;
+    max-width: 100%;
+    margin: 0 auto 2rem auto;
+  }
+  
+  /* تأكد من عدم التداخل في الهواتف */
+  .portfolio-container {
+    padding-bottom: 4rem;
+  }
+  
+  .bio-paragraph {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.5rem;
+    line-height: 1.5;
+  }
+  
+  .enhanced-badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+}
+
+/* Fix for cut-off letters like 'g', 'j', 'y' */
+h1, .typing-name {
+  padding-bottom: 0.3em !important;
+  margin-bottom: 0.8em;
+  overflow: visible !important;
+  line-height: 1.3 !important;
+}
+
 /* Enhanced Button Styles with Golden Glow */
 .btn-primary {
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
