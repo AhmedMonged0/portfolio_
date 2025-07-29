@@ -121,18 +121,9 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {['React', 'JavaScript', 'Three.js', 'Node.js', 'CSS3', 'HTML5', 'Git', 'MongoDB'].map((skill, index) => {
               const getSkillVariant = (skill, index) => {
-                // تحديد ألوان خاصة لمهارات معينة
-                const skillColors = {
-                  'React': 'skill-button-blue',
-                  'CSS3': 'skill-button-purple',
-                  'JavaScript': 'skill-button-cyan',
-                  'Three.js': 'skill-button',
-                  'Node.js': 'skill-button-blue',
-                  'HTML5': 'skill-button-purple',
-                  'Git': 'skill-button-cyan',
-                  'MongoDB': 'skill-button'
-                };
-                return skillColors[skill] || 'skill-button';
+                // ترتيب منطقي للألوان: ذهبي، أزرق، بنفسجي، سماوي
+                const variants = ['skill-button', 'skill-button-blue', 'skill-button-purple', 'skill-button-cyan'];
+                return variants[index % 4];
               };
 
               return (
