@@ -373,6 +373,27 @@
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Breathing Animation for Profile Photo */
+@keyframes breathe {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 
+      0 0 40px rgba(255, 165, 2, 0.6), 
+      0 0 80px rgba(255, 165, 2, 0.4),
+      inset 0 0 30px rgba(255, 165, 2, 0.1),
+      0 15px 50px rgba(0, 0, 0, 0.4);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 
+      0 0 50px rgba(255, 165, 2, 0.8), 
+      0 0 100px rgba(255, 165, 2, 0.6),
+      inset 0 0 40px rgba(255, 165, 2, 0.15),
+      0 20px 60px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Smooth Glass Card for Profile Info */
@@ -990,6 +1011,44 @@ h1, .typing-name {
       0 10px 30px rgba(255, 215, 0, 0.2),
       inset 0 0 20px rgba(255, 215, 0, 0.1);
   }
+}
+
+/* Cursor Trail Styles */
+.cursor-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-ripple {
+  pointer-events: none;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.15);
+}
+
+.cursor-main {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: screen;
+}
+
+/* المؤشر العادي مع تحسينات */
+body {
+  cursor: default;
+}
+
+a, button, .cursor-pointer {
+  cursor: pointer;
+}
+
+/* تحسين شكل المؤشر على العناصر التفاعلية */
+a:hover, button:hover, .cursor-pointer:hover {
+  cursor: pointer;
 }
 
 /* Enhanced Skill Button Variants */

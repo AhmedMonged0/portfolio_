@@ -202,15 +202,6 @@ export default function Hero() {
             >
               <motion.div 
                 className="profile-photo-container relative moving-border-card-orange rounded-full overflow-hidden"
-                style={{
-                  boxShadow: `
-                    0 0 40px rgba(255, 165, 2, 0.6), 
-                    0 0 80px rgba(255, 165, 2, 0.4),
-                    inset 0 0 30px rgba(255, 165, 2, 0.1),
-                    0 15px 50px rgba(0, 0, 0, 0.4)
-                  `,
-                  transition: 'all 0.3s ease, box-shadow 0.3s ease'
-                }}
                 whileHover={{ 
                   scale: 1.08,
                   transition: { duration: 0.3, type: "spring", stiffness: 300 }
