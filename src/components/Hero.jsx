@@ -213,12 +213,11 @@ export default function Hero() {
                 }}
                 whileHover={{ 
                   scale: 1.08,
-                  rotate: 5,
                   transition: { duration: 0.3, type: "spring", stiffness: 300 }
                 }}
-                initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 1.2, delay: 0.8, type: "spring", stiffness: 100 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = `
                     0 0 60px rgba(255, 165, 2, 0.8), 
