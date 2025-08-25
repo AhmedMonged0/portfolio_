@@ -381,17 +381,17 @@
   0%, 100% { 
     transform: scale(1);
     box-shadow: 
-      0 0 40px rgba(255, 165, 2, 0.6), 
-      0 0 80px rgba(255, 165, 2, 0.4),
-      inset 0 0 30px rgba(255, 165, 2, 0.1),
+      0 0 40px rgba(255, 255, 255, 0.6), 
+      0 0 80px rgba(255, 255, 255, 0.4),
+      inset 0 0 30px rgba(255, 255, 255, 0.1),
       0 15px 50px rgba(0, 0, 0, 0.4);
   }
   50% { 
     transform: scale(1.02);
     box-shadow: 
-      0 0 50px rgba(255, 165, 2, 0.8), 
-      0 0 100px rgba(255, 165, 2, 0.6),
-      inset 0 0 40px rgba(255, 165, 2, 0.15),
+      0 0 50px rgba(255, 255, 255, 0.8), 
+      0 0 100px rgba(255, 255, 255, 0.6),
+      inset 0 0 40px rgba(255, 255, 255, 0.15),
       0 20px 60px rgba(0, 0, 0, 0.5);
   }
 }
@@ -1447,13 +1447,13 @@ a:hover, button:hover, .cursor-pointer:hover {
   filter: drop-shadow(0 0 4px rgba(46, 213, 115, 0.5));
 }
 
-/* Moving Border Card - Orange */
+/* Moving Border Card - White */
 .moving-border-card-orange {
   position: relative;
   overflow: hidden;
   box-shadow: 
-    0 0 25px rgba(255, 165, 2, 0.15),
-    inset 0 0 25px rgba(255, 165, 2, 0.03);
+    0 0 25px rgba(255, 255, 255, 0.15),
+    inset 0 0 25px rgba(255, 255, 255, 0.06);
   border: 2px solid transparent;
   background-clip: padding-box;
 }
@@ -1467,12 +1467,12 @@ a:hover, button:hover, .cursor-pointer:hover {
     rgba(15, 23, 42, 0.95) 100%
   ) padding-box,
   linear-gradient(45deg, 
-    rgba(255, 165, 2, 0.4), 
-    rgba(251, 146, 60, 0.3), 
-    rgba(255, 165, 2, 0.4),
-    rgba(234, 88, 12, 0.3)) border-box;
+    rgba(255, 255, 255, 0.45), 
+    rgba(255, 255, 255, 0.25), 
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0.25)) border-box;
   border: 2px solid transparent;
-  animation: borderPulseOrange 3s ease-in-out infinite;
+  animation: borderPulseWhite 3s ease-in-out infinite;
 }
 
 .moving-border-card-orange:hover::before {
@@ -1904,13 +1904,13 @@ a:hover, button:hover, .cursor-pointer:hover {
   background: conic-gradient(
     from 0deg,
     transparent,
-    rgba(255, 165, 2, 0.9),
-    rgba(251, 146, 60, 1),
-    rgba(255, 165, 2, 0.9),
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.9),
     transparent
   );
   z-index: -1;
-  animation: rotateGlowOrange 3.5s linear infinite;
+  animation: rotateGlowWhite 3.5s linear infinite;
 }
 
 .moving-border-card-orange.rounded-full::after {
@@ -1924,16 +1924,16 @@ a:hover, button:hover, .cursor-pointer:hover {
   background: conic-gradient(
     from 180deg,
     transparent,
-    rgba(234, 88, 12, 0.7),
-    rgba(255, 165, 2, 0.8),
-    rgba(234, 88, 12, 0.7),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.7),
     transparent
   );
   z-index: -2;
-  animation: rotateGlowOrange 4.5s linear infinite reverse;
+  animation: rotateGlowWhite 4.5s linear infinite reverse;
 }
 
-@keyframes rotateGlowOrange {
+@keyframes rotateGlowWhite {
   0% {
     transform: rotate(0deg);
     filter: blur(3px);
@@ -1953,15 +1953,15 @@ a:hover, button:hover, .cursor-pointer:hover {
   }
 }
 
-/* تحسين hover للصورة الشخصية البرتقالية */
+/* تحسين hover للصورة الشخصية - أبيض */
 .moving-border-card-orange.rounded-full:hover::before {
   animation-duration: 2s !important;
   background: conic-gradient(
     from 0deg,
     transparent,
-    rgba(255, 165, 2, 1),
-    rgba(251, 146, 60, 1),
-    rgba(255, 165, 2, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
     transparent
   );
 }
@@ -1971,23 +1971,23 @@ a:hover, button:hover, .cursor-pointer:hover {
   background: conic-gradient(
     from 180deg,
     transparent,
-    rgba(234, 88, 12, 0.9),
-    rgba(255, 165, 2, 1),
-    rgba(234, 88, 12, 0.9),
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.9),
     transparent
   );
 }
 
-@keyframes borderPulseOrange {
+@keyframes borderPulseWhite {
   0%, 100% { 
-    filter: drop-shadow(0 0 5px rgba(255, 165, 2, 0.3));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
   }
   50% { 
-    filter: drop-shadow(0 0 10px rgba(255, 165, 2, 0.5));
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
   }
 }
 
-/* خط متحرك أفقي - برتقالي */
+/* خط متحرك أفقي - أبيض */
 .moving-border-card-orange::before {
   content: '';
   position: absolute;
@@ -1997,18 +1997,18 @@ a:hover, button:hover, .cursor-pointer:hover {
   height: 3px;
   background: linear-gradient(90deg, 
     transparent, 
-    rgba(255, 165, 2, 0.8), 
-    rgba(251, 146, 60, 0.8),
-    rgba(255, 165, 2, 0.8), 
+    rgba(255, 255, 255, 0.85), 
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.85), 
     transparent
   );
   z-index: 10;
   opacity: 1;
   animation: scanlineHorizontal 4s ease-in-out infinite 2.5s;
-  filter: drop-shadow(0 0 4px rgba(255, 165, 2, 0.5));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 
-/* خط متحرك عمودي - برتقالي */
+/* خط متحرك عمودي - أبيض */
 .moving-border-card-orange::after {
   content: '';
   position: absolute;
@@ -2018,15 +2018,15 @@ a:hover, button:hover, .cursor-pointer:hover {
   width: 3px;
   background: linear-gradient(180deg, 
     transparent, 
-    rgba(255, 165, 2, 0.8), 
-    rgba(251, 146, 60, 0.8),
-    rgba(255, 165, 2, 0.8), 
+    rgba(255, 255, 255, 0.85), 
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.85), 
     transparent
   );
   z-index: 10;
   opacity: 1;
   animation: scanlineVertical 4.5s ease-in-out infinite 4.5s;
-  filter: drop-shadow(0 0 4px rgba(255, 165, 2, 0.5));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 .card-blue {
   background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(22, 33, 62, 0.8) 100%);

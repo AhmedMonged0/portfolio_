@@ -203,7 +203,7 @@ export default function Hero() {
               <motion.div 
                 className="profile-photo-container relative moving-border-card-orange rounded-full overflow-hidden"
                 whileHover={{ 
-                  scale: 1.08,
+                  scale: 1.02,
                   transition: { duration: 0.3, type: "spring", stiffness: 300 }
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -211,17 +211,17 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = `
-                    0 0 60px rgba(255, 165, 2, 0.8), 
-                    0 0 100px rgba(255, 165, 2, 0.6),
-                    inset 0 0 40px rgba(255, 165, 2, 0.2),
-                    0 20px 60px rgba(0, 0, 0, 0.5)
+                    0 0 60px rgba(255, 255, 255, 0.7), 
+                    0 0 100px rgba(255, 255, 255, 0.5),
+                    inset 0 0 40px rgba(255, 255, 255, 0.15),
+                    0 20px 60px rgba(0, 0, 0, 0.45)
                   `;
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = `
-                    0 0 40px rgba(255, 165, 2, 0.6), 
-                    0 0 80px rgba(255, 165, 2, 0.4),
-                    inset 0 0 30px rgba(255, 165, 2, 0.1),
+                    0 0 40px rgba(255, 255, 255, 0.5), 
+                    0 0 80px rgba(255, 255, 255, 0.35),
+                    inset 0 0 30px rgba(255, 255, 255, 0.1),
                     0 15px 50px rgba(0, 0, 0, 0.4)
                   `;
                 }}
@@ -232,7 +232,7 @@ export default function Hero() {
                   alt="Ahmed Monged" 
                   className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover relative z-10"
                   style={{
-                    border: '4px solid rgba(255, 165, 2, 0.6)',
+                    border: '4px solid rgba(255, 255, 255, 0.7)',
                     transition: 'all 0.3s ease'
                   }}
                 />
