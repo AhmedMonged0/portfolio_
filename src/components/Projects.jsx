@@ -7,6 +7,7 @@ import project2Image from '../assets/project2.png'
 import project3Image from '../assets/project3.png'
 import project4Image from '../assets/project4.png'
 import project5Image from '../assets/project5.png'
+import project6Image from '../assets/project6.png'
 
 const projects = [
   {
@@ -54,9 +55,15 @@ const projects = [
     liveUrl: "https://airline-tan.vercel.app/",
     githubUrl: "#"
   },
-
-
-
+  {
+    id: 6,
+    title: "CyberByte",
+    description: "منصة متخصصة لبيع أجهزة الكمبيوتر وملحقاتها، تشمل معالجات، كروت شاشة، ذاكرة، أقراص صلبة، وكل ما يخص أجهزة الكمبيوتر مع عروض حصرية وأسعار تنافسية.",
+    image: project6Image, 
+    technologies: ["HTML", "Css", "JavaScript", "React", "Node.js"],
+    liveUrl: "https://cyberbyte-liart.vercel.app/",
+    githubUrl: "#"
+  }
 ]
 
 function ProjectCard({ project, index }) {
@@ -67,7 +74,8 @@ function ProjectCard({ project, index }) {
       'moving-border-card-purple', 
       'moving-border-card-cyan',
       'moving-border-card-green',
-      'moving-border-card-orange'
+      'moving-border-card-orange',
+      'moving-border-card-pink'
     ];
     return colors[index % colors.length];
   };
@@ -78,7 +86,8 @@ function ProjectCard({ project, index }) {
       'rgba(156, 136, 255, 0.3)',
       'rgba(0, 212, 255, 0.3)',
       'rgba(46, 213, 115, 0.3)',
-      'rgba(255, 165, 2, 0.3)'
+      'rgba(255, 165, 2, 0.3)',
+      'rgba(255, 105, 180, 0.3)'
     ];
     return glowColors[index % glowColors.length];
   };
