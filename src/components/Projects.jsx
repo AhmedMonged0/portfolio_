@@ -2,69 +2,7 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Button } from './ui/button'
 import { ExternalLink, Github } from 'lucide-react'
-import project1Image from '../assets/project1.png'
-import project2Image from '../assets/project2.png'
-import project3Image from '../assets/project3.png'
-import project4Image from '../assets/project4.png'
-import project5Image from '../assets/project5.png'
-import project6Image from '../assets/project6.png'
-
-const projects = [
-  {
-    id: 1,
-    title: "Store",
-    description: "موقع تجارة إلكترونية بسيط يتيح تصفح المنتجات وإضافتها إلى السلة، مع واجهة استخدام سلسة وتصميم جذاب يناسب تجربة المستخدم.",
-    image: project1Image,
-    technologies: ["HTML", "Css", "JS", "React JS"],
-    liveUrl: "https://project-1-blush-beta.vercel.app/",
-    githubUrl: "#"
-  },
-  {
-    id: 2,
-    title: "Dashboard", 
-    description: "لوحة تحكم تفاعلية لعرض البيانات والتحليلات بطريقة بصرية واضحة باستخدام الرسوم البيانية، تُستخدم لمراقبة الأداء واتخاذ القرارات.",
-    image: project2Image,
-    technologies: ["HTML", "Css", "Three.js", "React.js"],
-    liveUrl: "https://dashboard-chi-nine-28.vercel.app/",
-    githubUrl: "#"
-  },
-  {
-    id: 3,
-    title: "Future Store",
-    description: "منصة تسوق مستقبلية تعتمد على واجهات حديثة وتفاعلية، توفّر تجربة شراء سهلة ومريحة مع مزايا تحليلية وإحصائيات أداء متقدمة.",
-    image: project3Image, 
-    technologies: ["HTML", "Css", "Three.js", "React.js"],
-    liveUrl: "https://future-store-ebon.vercel.app/",
-    githubUrl: "#"
-  },
-  {
-    id: 4,
-    title: "Building_Company",
-    description: "موقع شركة إنشاءات يعرض خدمات الشركة ومشاريعها السابقة بتصميم احترافي وواجهة مستخدم سهلة التنقل.",
-    image: project4Image, 
-    technologies: ["HTML", "Css", "JavaScript"],
-    liveUrl: "https://building-company-blond.vercel.app/",
-    githubUrl: "#"
-  },
-  {
-    id: 5,
-    title: "airline",
-    description: "موقع إلكتروني تفاعلي لشركة طيران يتيح للمستخدمين استكشاف الوجهات، معرفة الخدمات، وحجز الرحلات بسهولة. التصميم عصري ومتجاوب ليعمل بسلاسة على جميع الأجهزة.",
-    image: project5Image, 
-    technologies: ["HTML", "Css", "JavaScript", "React"],
-    liveUrl: "https://airline-tan.vercel.app/",
-    githubUrl: "#"
-  },
-  {
-    id: 6,
-    title: "CyberByte",
-    description: "منصة متخصصة لبيع أجهزة الكمبيوتر وملحقاتها، تشمل معالجات، كروت شاشة، ذاكرة، أقراص صلبة، وكل ما يخص أجهزة الكمبيوتر مع عروض حصرية وأسعار تنافسية.",
-    image: project6Image, 
-    technologies: ["HTML", "Css", "JavaScript", "React", "Node.js"],
-    liveUrl: "https://cyberbyte-liart.vercel.app/",
-    githubUrl: "#"
-  }
-]
+import { useData } from '../contexts/DataContext'
 
 function ProjectCard({ project, index }) {
   // تحديد اللون بناءً على الفهرس
@@ -159,6 +97,8 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Projects() {
+  const { data } = useData()
+  
   return (
     <section id="projects" className="portfolio-container py-20 px-4">
       <div className="content-layer max-w-6xl mx-auto">
@@ -175,7 +115,7 @@ export default function Projects() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {data.projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
