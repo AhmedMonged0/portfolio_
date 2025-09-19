@@ -1,8 +1,37 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from './ui/card'
-import { useData } from '../contexts/DataContext'
 
-function TimelineItem({ item, index, data }) {
+const timeline = [
+
+
+  {
+    year: "2024",
+    title: "التعليم الأكاديمي",
+    description: "دراسة علوم الحاسوب والتقنيات الحديثة",
+    icon: "🎓"
+  },
+
+  {
+    year: "2023",
+    title: "مطور ويب متقدم",
+    description: "تطوير مواقع ويب متقدمة باستخدام أحدث التقنيات",
+    icon: "🚀"
+  },
+  {
+    year: "2022", 
+    title: "مطور فرونت إند",
+    description: "تخصص في تطوير واجهات المستخدم التفاعلية",
+    icon: "💻"
+  },
+  {
+    year: "2021",
+    title: "بداية رحلة البرمجة",
+    description: "تعلم أساسيات البرمجة وتطوير الويب",
+    icon: "🌱"
+  }
+]
+
+function TimelineItem({ item, index }) {
   // تحديد اللون بناءً على الفهرس
   const getCardColorClass = (index) => {
     const colors = [
@@ -61,7 +90,7 @@ function TimelineItem({ item, index, data }) {
       {/* Timeline Line */}
       <div className="flex flex-col items-center">
         <div className="w-4 h-4 bg-primary rounded-full glow-effect"></div>
-        {index < data.timeline.length - 1 && (
+        {index < timeline.length - 1 && (
           <div className="w-0.5 h-20 bg-gradient-to-b from-primary to-transparent"></div>
         )}
       </div>
@@ -72,8 +101,6 @@ function TimelineItem({ item, index, data }) {
 }
 
 export default function About() {
-  const { data } = useData()
-  
   return (
     <section id="about" className="portfolio-container py-20 px-4">
       <div className="content-layer max-w-4xl mx-auto">
@@ -152,9 +179,9 @@ export default function About() {
               >
                 <span className="relative z-10 drop-shadow-lg">👨‍💻</span>
               </motion.div>
-              <h3 className="text-2xl font-bold text-primary mb-4">{data.profile.title}</h3>
+              <h3 className="text-2xl font-bold text-primary mb-4">مطور ويب متخصص</h3>
               <p className="text-white/70 text-lg leading-relaxed">
-                {data.profile.description}
+                Web developer focused on modern UI development using React and Three.js, with a passion for performance, interactivity, and elegant design.
               </p>
             </CardContent>
           </Card>
@@ -162,8 +189,8 @@ export default function About() {
 
         {/* Timeline */}
         <div className="space-y-8">
-          {data.timeline.map((item, index) => (
-            <TimelineItem key={index} item={item} index={index} data={data} />
+          {timeline.map((item, index) => (
+            <TimelineItem key={index} item={item} index={index} />
           ))}
         </div>
 
@@ -176,7 +203,7 @@ export default function About() {
         >
           <h3 className="text-3xl font-bold text-center text-primary mb-8">المهارات التقنية</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {data.profile.skills.map((skill, index) => {
+            {['React', 'JavaScript', 'Three.js', 'Node.js', 'CSS3', 'HTML5', 'Git', 'MongoDB'].map((skill, index) => {
               const getSkillVariant = (skill, index) => {
                 // ترتيب منطقي للألوان: ذهبي، أزرق، بنفسجي، سماوي
                 const variants = ['skill-button', 'skill-button-blue', 'skill-button-purple', 'skill-button-cyan'];

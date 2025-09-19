@@ -1,13 +1,12 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import Scene3D from './Scene3D'
 import { Button } from './ui/button'
-import { useData } from '../contexts/DataContext'
+import myPhoto from '../assets/myphoto.jpg'
 import { useState, useEffect, useRef } from 'react'
 
 export default function Hero() {
-  const { data } = useData()
   const [typedText, setTypedText] = useState('')
-  const fullName = data.profile.name
+  const fullName = 'Ahmed Monged'
   
   // Mouse tracking للبوكس
   const cardRef = useRef(null)
@@ -123,24 +122,41 @@ export default function Hero() {
                 }}
               >
                 <span className="enhanced-badge px-6 py-3 text-lg rounded-full inline-block">
-                  💻 {data.profile.title}
+                  💻 Frontend Developer
                 </span>
               </motion.div>
 
               <div className="bio-section space-y-5 mb-8 text-center">
-                {data.profile.bio.map((item, index) => (
-                  <motion.p
-                    key={index}
-                    className="bio-paragraph text-base md:text-lg text-white/90 leading-relaxed text-center"
-                    whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 + (index * 0.2) }}
-                  >
-                    <span className="bio-icon">{item.icon}</span>
-                    {item.text}
-                  </motion.p>
-                ))}
+                <motion.p
+                  className="bio-paragraph text-base md:text-lg text-white/90 leading-relaxed text-center"
+                  whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <span className="bio-icon">💻</span>
+                  متخصص في تطوير واجهات المستخدم التفاعلية باستخدام أحدث التقنيات والأدوات
+                </motion.p>
+                <motion.p
+                  className="bio-paragraph text-base md:text-lg text-white/90 leading-relaxed text-center"
+                  whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                >
+                  <span className="bio-icon">🚀</span>
+                  خبرة في بناء تطبيقات ويب سريعة ومتجاوبة مع تصميمات عصرية وأداء محسن
+                </motion.p>
+                <motion.p
+                  className="bio-paragraph text-base md:text-lg text-white/90 leading-relaxed text-center"
+                  whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                >
+                  <span className="bio-icon">🎯</span>
+                  أركز على كتابة كود نظيف وقابل للصيانة مع تطبيق أفضل الممارسات التقنية
+                </motion.p>
               </div>
 
               {/* Skills Tags */}
@@ -150,7 +166,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.4 }}
               >
-                {data.profile.skills.map((skill, index) => (
+                {['React', 'JavaScript', 'Node.js', 'CSS3', 'HTML5'].map((skill, index) => (
                   <motion.span
                     key={skill}
                     className="skill-tag px-3 py-1.5 bg-accent/15 text-accent text-sm rounded-full border border-accent/25"
@@ -212,8 +228,8 @@ export default function Hero() {
               >
                 {/* Photo */}
                 <img 
-                  src={data.profile.image} 
-                  alt={data.profile.name} 
+                  src={myPhoto} 
+                  alt="Ahmed Monged" 
                   className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover relative z-10"
                   style={{
                     border: '4px solid rgba(255, 255, 255, 0.7)',
