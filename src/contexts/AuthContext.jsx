@@ -12,21 +12,14 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const token = localStorage.getItem('admin_token')
-    if (token) setIsAuthenticated(true)
-    setIsLoading(false)
-  }, [])
+  const [isLoading, setIsLoading] = useState(false)
 
   const login = (username, password) => {
     const configuredUser = import.meta.env.VITE_ADMIN_USER || 'admin'
     const configuredPass = import.meta.env.VITE_ADMIN_PASS || 'admin123'
 
     if (username === configuredUser && password === configuredPass) {
-      const token = 'admin_token_' + Date.now()
-      localStorage.setItem('admin_token', token)
+      // لا نقوم بالحفظ في المتصفح لضمان طلب تسجيل الدخول في كل زيارة
       setIsAuthenticated(true)
       return { success: true }
     }
@@ -34,7 +27,6 @@ export const AuthProvider = ({ children }) => {
   }
 
   const logout = () => {
-    localStorage.removeItem('admin_token')
     setIsAuthenticated(false)
   }
 
