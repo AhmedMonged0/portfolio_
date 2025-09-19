@@ -104,7 +104,7 @@ export default function ProjectsManagement() {
             </div>
             <div>
               <label className="block text-sm font-medium text-white/70 mb-2">رابط الصورة</label>
-              <Input name="image" value={formData.image} onChange={handleChange} placeholder="/src/assets/project1.png" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+              <Input name="image" value={formData.image} onChange={handleChange} placeholder="/assets/project1.png" className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
             </div>
             <div>
               <label className="block text-sm font-medium text-white/70 mb-2">التقنيات المستخدمة (مفصولة بفواصل)</label>

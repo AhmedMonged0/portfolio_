@@ -78,7 +78,7 @@ export default function ProfileManagement() {
             <label className="block text-sm font-medium text-white/70 mb-2">الصورة الشخصية</label>
             <div className="flex items-center gap-4">
               <img src={formData.image} alt="Profile" className="w-20 h-20 rounded-full object-cover border-2 border-primary/50" />
-              <Input name="image" value={formData.image} onChange={handleChange} placeholder="رابط الصورة" disabled={!isEditing} className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+              <Input name="image" value={formData.image} onChange={handleChange} placeholder="/profile.jpg أو /assets/your-image.png" disabled={!isEditing} className="bg-white/10 border-white/20 text-white placeholder:text-white/50" />
             </div>
           </div>
           <div>

@@ -15,7 +15,7 @@ const defaultData = {
     name: 'Ahmed Monged',
     title: 'Frontend Developer',
     description: 'متخصص في تطوير واجهات المستخدم التفاعلية باستخدام أحدث التقنيات والأدوات',
-    image: '/src/assets/myphoto.jpg',
+    image: '/profile.jpg',
     skills: ['React', 'JavaScript', 'Node.js', 'CSS3', 'HTML5'],
     bio: [
       { icon: '💻', text: 'متخصص في تطوير واجهات المستخدم التفاعلية باستخدام أحدث التقنيات والأدوات' },
