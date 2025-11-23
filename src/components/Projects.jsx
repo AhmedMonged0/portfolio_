@@ -64,6 +64,17 @@ const projects = [
     liveUrl: "https://cyberbyte-liart.vercel.app/",
     githubUrl: "#"
   }
+
+  ,
+  {
+    id: 7,
+    title: "Rawi",
+    description: "منصة راوي تقدم لك تجربة قراءة استثنائية تجمع بين سحر الورق وتقنيات المستقبل.",
+    image: project7Image, 
+    technologies: ["HTML", "Css", "JavaScript", "React", "Node.js"],
+    liveUrl: "https://cyberbyte-liart.vercel.app/",
+    githubUrl: "#"
+  }
 ]
 
 function ProjectCard({ project, index }) {
