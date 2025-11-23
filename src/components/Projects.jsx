@@ -8,6 +8,7 @@ import project3Image from '../assets/project3.png'
 import project4Image from '../assets/project4.png'
 import project5Image from '../assets/project5.png'
 import project6Image from '../assets/project6.png'
+import project7Image from '../assets/project7.png'
 
 const projects = [
   {
@@ -63,16 +64,14 @@ const projects = [
     technologies: ["HTML", "Css", "JavaScript", "React", "Node.js"],
     liveUrl: "https://cyberbyte-liart.vercel.app/",
     githubUrl: "#"
-  }
-
-  ,
+  },
   {
     id: 7,
     title: "Rawi",
     description: "منصة راوي تقدم لك تجربة قراءة استثنائية تجمع بين سحر الورق وتقنيات المستقبل.",
     image: project7Image, 
     technologies: ["HTML", "Css", "JavaScript", "React", "Node.js"],
-    liveUrl: "https://cyberbyte-liart.vercel.app/",
+    liveUrl: "https://rawi-kappa.vercel.app/",
     githubUrl: "#"
   }
 ]
